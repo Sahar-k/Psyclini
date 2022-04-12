@@ -27,14 +27,14 @@
     
         <div class="collapse navbar-collapse" id="navbarmain">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
-            <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>    
-            <li class="nav-item"><a class="nav-link" href="tests.html">Tests</a></li>
-            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>    
-            <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>      
+            <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('doctors/') }}">Doctors</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('articles/') }}">Articles</a></li>    
+            <li class="nav-item"><a class="nav-link" href="{{ url('test/') }}">Tests</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('blog/') }}">Blog</a></li>    
+            <li class="nav-item"><a class="nav-link" href="{{ url('') }}">Games</a></li>      
             <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
-            <a class="btn btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="{{ url('sign/') }}">Sign In</a>
+            <a class="btn btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="{{ url('sign in/') }}">Sign In</a>
           </ul>
         </div>
       </div>
@@ -73,7 +73,7 @@
         </div>
         <div class="col-lg-4">
           <div class=" pl-4 mt-4 mt-lg-0">
-            <h2 class="title-color">Personal care <br>& healthy living</h2>
+            <h2 class="title-color">Easy, Fast<br>& Efficient</h2>
             <p class="mt-4 mb-5">Choose your therapist and book an appointment from the comfort of your home.</p>
             <a href="doctors.html" class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4">Book an Appointment<i class="icofont-simple-right ml-3"></i></a>
           </div>
@@ -98,10 +98,10 @@
       <div class="row align-items-center " >
         <div class="col-lg-12 testimonial-wrap-2">
 
-          <div class="testimonial-block style-2  gray-bg" ><!--Test. 1-->
+          <div class="testimonial-block style-2  gray-bg" ><!--Testimonial 1-->
             <i class="icofont-quote-right"></i>
             <div class="testimonial-thumb">
-              <img src="../img/test. 1 pic.jpg" alt="" class="img-fluid">
+              <img src="../img/Testimonial 1 pic.jpg" alt="" class="img-fluid">
             </div>
             <div class="client-info ">
               <h4>Amazing service!</h4>
@@ -111,9 +111,9 @@
             <h5>To Doctor : <a href="#"> Mazen Salah</a></h5>
           </div>
   
-          <div class="testimonial-block style-2  gray-bg"><!--Test. 2-->
+          <div class="testimonial-block style-2  gray-bg"><!--Testimonial 2-->
             <div class="testimonial-thumb">
-              <img src="../img/test. 2 pic.jpg" alt="" class="img-fluid">
+              <img src="../img/Testimonial 2 pic.jpg" alt="" class="img-fluid">
             </div>
             <div class="client-info">
               <h4>Expert doctors!</h4>
@@ -126,9 +126,9 @@
             <i class="icofont-quote-right"></i>
           </div>
   
-          <div class="testimonial-block style-2  gray-bg"><!--Test. 3-->
+          <div class="testimonial-block style-2  gray-bg"><!--Testimonial 3-->
             <div class="testimonial-thumb">
-              <img src="../img/test. 3 pic.jpg" alt="" class="img-fluid">
+              <img src="../img/Testimonial 3 pic.jpg" alt="" class="img-fluid">
             </div>
             <div class="client-info">
               <h4>The Best!</h4>
@@ -141,9 +141,9 @@
             <i class="icofont-quote-right"></i>
           </div>
   
-          <div class="testimonial-block style-2  gray-bg"><!--Test. 4-->
+          <div class="testimonial-block style-2  gray-bg"><!--Testimonial 4-->
             <div class="testimonial-thumb">
-              <img src="../img/test. 4 pic.jpg" alt="" class="img-fluid">
+              <img src="../img/Testimonial 4 pic.jpg" alt="" class="img-fluid">
             </div>
             <div class="client-info">
               <h4>Nice Environment!</h4>
@@ -156,9 +156,9 @@
             <h5>To Doctor : <a href="#"> Eslam Fathy</a></h5>
           </div>
   
-          <div class="testimonial-block style-2  gray-bg"><!--Test. 5-->
+          <div class="testimonial-block style-2  gray-bg"><!--Testimonial 5-->
             <div class="testimonial-thumb">
-              <img src="../img/test. 5 pic.jpg" alt="" class="img-fluid">
+              <img src="../img/Testimonial 5 pic.jpg" alt="" class="img-fluid">
             </div>
             <div class="client-info">
               <h4>Great Responses</h4>
@@ -218,7 +218,7 @@
                 <input type="email" class="form-control main" placeholder="Email" name="email" required>
               </div>
               <div class="col-lg-12">
-                <input type="tel" class="form-control main" placeholder="Phone" required>
+                <input type="tel" class="form-control main" placeholder="Phone Number" required>
               </div>
               <div class="col-lg-12">
                 <textarea name="message" rows="8" class="form-control main" placeholder="Your message"></textarea>

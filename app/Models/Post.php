@@ -2,10 +2,44 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Doctor;
+use App\Models\Secretary;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Post extends Model
 {
     use HasFactory;
+    public $table = 'posts';
+    public $fillable = [ 
+        'id',
+        'title',
+        'body' , 
+        'status',
+        'speciality'
+    ];
+    public $hidden = ['pivot'];
+
+    /**
+     * The roles that belong to the Post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function patients()
+    {
+        return $this->belongsToMany(Patient::class, 'post_patient');
+    }
+    public function doctors()
+    {
+        return $this->belongsToMany(Doctor::class, 'doctor_post', 'post_id' , 'doctor_ssn' , 'id' , 'ssn');
+    }
+    /**
+     * The roles that belong to the Post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function secretaries()
+    {
+        return $this->belongsToMany(Secretary::class, 'post_secretary', 'Post_id', 'secretary_ssn', 'id', 'ssn');
+    }
 }

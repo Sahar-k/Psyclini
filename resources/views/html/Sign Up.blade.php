@@ -24,44 +24,60 @@
                 </button>
             
                 <div class="collapse navbar-collapse" id="navbarmain">
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                      <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
-                      <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>    
-                      <li class="nav-item"><a class="nav-link" href="tests.html">Tests</a></li>
-                      <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>    
-                      <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>      
-                      <li class="nav-item"><a class="nav-link" href="index.html#contact-us">Contact Us</a></li>
-                      <a class="btn btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="Sign In.html">Sign In</a>
-                    </ul>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('doctors/') }}">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('articles/') }}">Articles</a></li>    
+                    <li class="nav-item"><a class="nav-link" href="{{ url('test/') }}">Tests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('blog/') }}">Blog</a></li>    
+                    <li class="nav-item"><a class="nav-link" href="{{ url('') }}">Games</a></li>      
+                    <li class="nav-item"><a class="nav-link" href="#contact-us">Contact Us</a></li>
+                    <a class="btn btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="{{ url('sign in/') }}">Sign In</a>
+                  </ul>
                   </div>
               </div>
             </nav>
         </header>
+
 
         <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7 col-lg-5">
                         <div class="wrap">
-                                <div class="login-wrap p-4 p-md-5">
+                                <div class="signup-wrap p-4 p-md-5">
                                     <div class="d-flex">
                                         <div class="w-100">
-                                            <h3 class="mb-4">Sign In</h3>
+                                            <h3 class="mb-4">Sign Up</h3>
                                         </div>          
                                     </div>
-                                    <form action="#" class="signin-form">
+                                    <form action="#" class="signup-form">
+                                        <div class="form-group mt-3">
+                                            <input type="email" class="form-control" name="email" required>
+                                            <label class="form-control-placeholder" for="email" >E-mail</label>
+                                        </div>
                                         <div class="form-group mt-3">
                                             <input type="text" class="form-control" required>
-                                            <label class="form-control-placeholder" for="Username" >E-mail/Username</label> 
-										</div>
+                                            <label class="form-control-placeholder" for="Username" >Username</label>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <input type="text" class="form-control" required>
+                                            <label class="form-control-placeholder" for="Firstname" >First Name</label>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <input type="text" class="form-control" required>
+                                            <label class="form-control-placeholder" for="Lastname" >Last Name</label>
+                                        </div>
+                                        <div class="form-group mt-3">
+                                            <input type="tel" class="form-control" name="phone" required>
+                                            <label class="form-control-placeholder" for="phone">Phone Number</label>
+                                        </div>
                                         <div class="form-group">
                                             <input id="password-field" type="password" class="form-control" required>
                                             <label class="form-control-placeholder" for="password">Password</label>
                                             <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                         </div>
                                         <div class="form-group">
-                                            <button type="submit" class="form-control btn btn-primary rounded-pill submit px-3">Sign In</button>
+                                            <button type="submit" class="form-control btn btn-primary rounded-pill submit px-3">Sign Up</button>
                                         </div>
                                         <div class="form-group d-md-flex">
                                             <div class="w-50 text-left">
@@ -72,14 +88,13 @@
                                             </div>          
                                         </div>
                                     </form>
-                                    <p class="text-center sign-color" >Not a Member ?<a href="Sign Up.html"> Sign Up</a></p>
-                                </div>
+                                    <p class="text-center sign-color">Already a Member? <a href="Sign In.html" >Sign In</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <script src="../js/jquery.js"></script>
         <script src="../js/bootstrap.min.js"></script>

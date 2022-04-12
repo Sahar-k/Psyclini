@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,12 +21,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/' , function(){
     return view('html.index');
+})->name('home');
+
+Route::get('doctors' , function(){
+    return view('html.doctors');
 });
-Route::get('/sign' , function(){
+
+Route::get('articles' , function(){
+    return view('html.articles');
+});
+Route::get('test' , function(){
+    return view('html.test');
+});
+Route::get('/sign in' , function(){
     return view('html.Sign In');
 });
-
+Route::get('/blog' , function(){
+    return view('html.blog');
+});
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('posts', PostController::class );

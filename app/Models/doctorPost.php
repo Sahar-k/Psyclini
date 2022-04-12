@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class doctorPost extends Model
 {
     use HasFactory;
+    public $table = 'doctor_post'; 
+    public $timestamps = false;
 }

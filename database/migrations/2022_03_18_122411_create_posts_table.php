@@ -15,11 +15,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->longText('body');
-            $table->boolean('status');
-            $table->string('speciality');
-            $table->timestamps();
+
         });
     }
 
