@@ -20,8 +20,13 @@ class PostController extends  Controller
      */
     public function index()
     {
-        $data = Doctor::with('patients')->get();
-        return response()->json($data);
+        $posts = Post::latest()->with('patients')->simplePaginate(2);
+        foreach($posts as $post){
+            $post->setAttribute('added_at',$post->created_at->diffForHumans());
+            $post->setAttribute('comments_count',$post->comments->count());
+        }
+        return view('html.blog', compact('posts'));
+        // return response()->json($posts);
     }
 
     /**

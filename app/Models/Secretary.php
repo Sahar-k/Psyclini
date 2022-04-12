@@ -26,4 +26,8 @@ class Secretary extends Model
      {
          return $this->belongsToMany(Post::class, 'post_secretary', 'secretary_ssn', 'post_id', 'ssn', 'id');
      }
+     public function comments()
+     {
+         return $this->hasMany(Comment::class);
+     }
 }

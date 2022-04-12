@@ -42,4 +42,13 @@ class Post extends Model
     {
         return $this->belongsToMany(Secretary::class, 'post_secretary', 'Post_id', 'secretary_ssn', 'id', 'ssn');
     }
+    /**
+     * Get all of the comments for the Post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

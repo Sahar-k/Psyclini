@@ -36,9 +36,8 @@ Route::get('test' , function(){
 Route::get('/sign in' , function(){
     return view('html.Sign In');
 });
-Route::get('/blog' , function(){
-    return view('html.blog');
-});
+Route::get('blog', [PostController::class, 'index'] );
+
 
 Auth::routes();
 Route::resource('posts', PostController::class );

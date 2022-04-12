@@ -46,5 +46,14 @@ class Doctor extends Model
    {
        return $this->belongsToMany(Patient::class, 'doctor_patient', 'doctor_ssn', 'patient_id', 'ssn' , 'id');
    }
+   /**
+    * Get all of the comments for the Doctor
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+   public function comments()
+   {
+       return $this->hasMany(Comment::class);
+   }
 }
 
