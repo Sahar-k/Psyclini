@@ -120,7 +120,7 @@
                   <p class="article-parag">
                       {{ $post->body }}
                   </p>
-                  <a href="blog page.html" target="_blank" class="btn btn-primary rounded-pill">Read More <i class="icofont-simple-right ml-2  "></i></a>
+                  <a href="{{ url('/blog page', $post->id) }}" target="_blank" class="btn btn-primary rounded-pill">Read More <i class="icofont-simple-right ml-2  "></i></a>
                 </div>
             </div>
         </div>

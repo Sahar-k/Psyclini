@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +32,8 @@ Route::get('doctors' , function(){
 Route::get('articles' , function(){
     return view('html.articles');
 });
+
+
 Route::get('test' , function(){
     return view('html.test');
 });
@@ -37,6 +41,8 @@ Route::get('/sign in' , function(){
     return view('html.Sign In');
 });
 Route::get('blog', [PostController::class, 'index'] );
+Route::get('blog page/{id}', [CommentController::class, 'show'] );
+
 
 
 Auth::routes();

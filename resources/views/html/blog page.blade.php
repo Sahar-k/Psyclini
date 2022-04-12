@@ -57,7 +57,7 @@
 
                         <div class="blog-item-meta mb-3">
                           <span class="text-color-2 text-capitalize mr-3"><i class="icofont-book-mark mr-2"></i> Child Disorders</span>
-                          <span class="text-muted text-capitalize mr-3"><i class="icofont-comment mr-2"></i>5 Comments</span>
+                          <span class="text-muted text-capitalize mr-3"><i class="icofont-comment mr-2"></i> Comments</span>
                           <span class="text-black text-muted text-capitalize mr-3"><i class="icofont-calendar mr-2"></i> 28th January 2019</span>
                         </div> 
 
@@ -131,7 +131,7 @@
                     </div>
                   </div>
 
-                  <div class="col-lg-12"><!--Write a Comment-->
+                  {{-- <div class="col-lg-12"><!--Write a Comment-->
                     <form class="comment-form my-5" id="comment-form">
                       <h4 class="mb-4">Write a Comment</h4>
                       <div class="row">
@@ -149,7 +149,7 @@
                       <textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" placeholder="Comment"></textarea>
                       <input class="btn btn-primary rounded-pill" type="submit" name="submit-contact" id="submit_contact" value="Submit Message">
                     </form>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
 
