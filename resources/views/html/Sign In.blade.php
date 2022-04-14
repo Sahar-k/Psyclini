@@ -50,13 +50,14 @@
                                             <h3 class="mb-4">Sign In</h3>
                                         </div>          
                                     </div>
-                                    <form action="#" class="signin-form">
+                                    <form action="{{ route('patient.login') }}" class="signin-form" method="POST">
+                                        @csrf
                                         <div class="form-group mt-3">
-                                            <input type="text" class="form-control" required>
+                                            <input type="text" class="form-control" name="email" required>
                                             <label class="form-control-placeholder" for="Username" >E-mail/Username</label> 
 										</div>
                                         <div class="form-group">
-                                            <input id="password-field" type="password" class="form-control" required>
+                                            <input id="password-field" type="password" class="form-control" name = 'password' required>
                                             <label class="form-control-placeholder" for="password">Password</label>
                                             <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                         </div>
@@ -66,13 +67,13 @@
                                         <div class="form-group d-md-flex">
                                             <div class="w-50 text-left">
                                                 <label class="checkbox-wrap checkbox-primary mb-0"> Remember Me
-                                                    <input type="checkbox" checked>
+                                                    <input type="checkbox" >
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>          
                                         </div>
                                     </form>
-                                    <p class="text-center sign-color" >Not a Member ?<a href="Sign Up.html"> Sign Up</a></p>
+                                    <p class="text-center sign-color" >Not a Member ?<a href="{{ route('signUp') }}"> Sign Up</a></p>
                                 </div>
                         </div>
                     </div>

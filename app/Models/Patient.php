@@ -9,9 +9,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Patient extends Model
 {
     use HasFactory;
+    
     public $table = 'patients';
     public $fillable = [ 
         'id',
+        'phone',
         'name',
         'email' , 
         'password',

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreDoctorRequest;
 use App\Http\Requests\UpdateDoctorRequest;
+use Illuminate\Validation\Validator;
+use Symfony\Component\Console\Input\Input;
 
 class DoctorController extends Controller
 {
@@ -15,8 +18,25 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $doctors = Doctor::Paginate(9);
+        return view('html.doctors', compact('doctors'));
     }
+    public function search(Request $request)
+{
+                $specialization = $request->input('speciality');
+                $rating = $request->input('rating');
+
+                    $doctors = Doctor::where(function ($q) use ($rating, $specialization){
+                        
+                        $q->where('speciality' , 'LIKE' , '%'.$specialization.'%')
+                          ->Where('rating' , "LIKE" , $rating.'%');
+                    })->paginate(6);
+                    // $doctors = Doctor::where('rating' , "LIKE" , '%'.$rating.'%')->paginate(6);
+                    return view('html.doctors', compact('doctors'));
+
+ 
+      
+}
 
     /**
      * Show the form for creating a new resource.
