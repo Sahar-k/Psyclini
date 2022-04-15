@@ -40,15 +40,25 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
         'patient' => [
             'driver' => 'session',
             'provider' => 'patients',
         ],
-    
-        'doctor' => [
-            'driver' => 'session',
-            'provider' => 'doctors',
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
         ],
+        
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+        
     ],
 
     /*
@@ -73,20 +83,26 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-        'doctors' => [
+        
+        'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Doctor::class,
+            'model' => App\Models\Admin::class,
         ],
-        'patient' => [
+        'patients' => [
             'driver' => 'eloquent',
-            'model' => App\Models\patients::class,
+            'model' => App\Models\Patient::class,
         ],
+        
+    ],
+
+
+
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-    ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -106,6 +122,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

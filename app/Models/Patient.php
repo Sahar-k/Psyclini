@@ -5,12 +5,14 @@ namespace App\Models;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Patient extends Model
+class Patient extends Authenticatable
 {
     use HasFactory;
-    
-    public $table = 'patients';
+    use Notifiable;
+    protected $guard = 'patient';
     public $fillable = [ 
         'id',
         'phone',
