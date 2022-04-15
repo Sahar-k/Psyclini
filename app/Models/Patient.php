@@ -23,6 +23,7 @@ class Patient extends Authenticatable
         'img',
         'sex'
     ];
+    //comment
     public $hidden = ['pivot'];
     /**
      * The roles that belong to the Patient
